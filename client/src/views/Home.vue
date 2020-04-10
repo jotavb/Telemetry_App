@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <img alt="vfs-logo" src="../assets/vfs_logo.jpg">
-    <SimpleRecord msg="Welcome to PG17vitor Telemetry App"/>
+    <SimpleRecord title="Welcome to PG17vitor Telemetry App"/>
   </div>
 </template>
 

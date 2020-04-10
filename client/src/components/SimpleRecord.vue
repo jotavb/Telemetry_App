@@ -1,10 +1,10 @@
 <template>
   <div class="Content">
-    <h1>{{ msg }}</h1>
+    <h1>{{ title }}</h1>
     <p>
       PG17vitor - Cloud Computing - VFS
     </p>
-    <button v-on:click="myFunction">Click Me</button>
+    <button v-on:click="doGenericPost">Click Me</button>
   </div>
 </template>
 
@@ -20,10 +20,10 @@
         this.vm = {
         }
         this.props = { // props are passed in when using this component
-          msg: String
+          title: String
         } 
         this.injectActions(mapActions(['doGenericPost']));
-        //this.injectGetters(mapGetters(['getState']));
+        //this.injectGetters(mapGetters(['getName']));
     }        
   }
 
