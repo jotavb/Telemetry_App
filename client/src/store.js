@@ -12,7 +12,7 @@ export default new Vuex.Store({
   },
   actions: {
     doGenericPost() {
-      axios('http://localhost:5000/api/generic/', { method:'POST',         
+      Axios('http://localhost:5000/api/generic/test', { method:'POST',         
         data:{
           name: 'Vitor'
         },
@@ -26,7 +26,7 @@ export default new Vuex.Store({
     }
   },
   getters: {
-
+    getName: state => state.player
   },
   modules: {
   }
