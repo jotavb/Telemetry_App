@@ -1,7 +1,7 @@
 <template>
-  <div class="home">
-    <h1>Welcome to PG17vitor Telemetry App</h1>
-    <h2>Number of Deaths by Section</h2>
+  <div class="admin">
+    <img alt="vfs-logo" src="../assets/vfs_logo.jpg">
+    <SendRecord title="Welcome to PG17vitor Admin Page"/>
   </div>
 </template>
 
@@ -10,7 +10,7 @@
 import SendRecord from '@/components/SendRecord.vue'
 
 export default {
-  name: 'Home',
+  name: 'Admin',
   components: {
     SendRecord
   }

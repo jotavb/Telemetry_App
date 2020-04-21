@@ -12,7 +12,7 @@
   import Controller from '@/lib/controller'
   import { mapActions, mapGetters } from 'vuex'
 
-  class SimpleRecordController extends Controller {
+  class SendRecordController extends Controller {
 
     constructor( name, subComponentList = []) 
     {
@@ -27,7 +27,7 @@
     }        
   }
 
-  export default new SimpleRecordController('simpleRecord'/* , { subComponent, anotherComponent } */);
+  export default new SendRecordController('sendRecord'/* , { subComponent, anotherComponent } */);
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
