@@ -22,7 +22,7 @@
         this.props = { // props are passed in when using this component
           title: String
         } 
-        this.injectActions(mapActions(['doGenericPost']));
+        this.injectActions(mapActions(['doSendRecord']));
         //this.injectGetters(mapGetters(['getName']));
     }        
   }
