@@ -14,24 +14,12 @@ export default new Vuex.Store({
     }
   },
   actions: {
-    doSendRecord() {
+    doSendRecord({commit}, data) {
 
-      let current_datetime = new Date()
       Axios('http://localhost:5000/api/gcloud/', { method:'POST',         
-        data:{
-          Date: current_datetime,
-          DeathInfo: [
-            {
-              MapSection: '1',
-              PosX: '-23.67',
-              PosY: '34.87',
-              PosZ: '67.02'
-            }
-          ]
-        }
+        data: data
       })
-      //.then(response => response.status)
-      .then(data=> console.log(data))
+      .then(response => response.status)
       .catch(err => console.warn(err));
     }
     ,
