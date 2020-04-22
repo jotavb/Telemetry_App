@@ -1,9 +1,20 @@
 <template>
-  <div class="Content">
+  <div class="content">
     <h2>{{ title }}</h2>
-    <p>
-      PG17vitor - Cloud Computing - VFS
-    </p>
+    <table>
+        <tbody>
+            <tr class="tableHeader">  
+                <td> Date </td>
+                <td class="tableHeaderMid"> Map Section </td>
+                <td> Position </td>
+            </tr>
+            <tr class="tableContent" v-for="(item, index) in getRecords" :key="index">
+                <td>{{ item['Date'] }}</td>
+                <td class="tableContentMid">{{ item['MapSection'] }}</td>
+                <td>({{ item['PosX'] }}, {{ item['PosY'] }}, {{ item['PosZ'] }})</td>
+            </tr>
+        </tbody>
+    </table>
   </div>
 </template>
 
@@ -24,7 +35,7 @@
         } 
         this.injectActions(mapActions(['doFetchRecords']));
         this.injectGetters(mapGetters(['getRecords']));
-    }        
+    }
 
     onBeforeMount() {
         this.doFetchRecords();
@@ -36,6 +47,31 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.tableHeader {
+    background: rgb(41, 30, 255);
+}
+.tableHeaderMid {
+    background: rgb(13, 0, 255);
+}
+.tableContent {
+    background: rgb(255, 140, 0);
+}
+.tableContentMid {
+    background: rgb(255, 155, 33);
+}
+table, th, td {
+    color: white;
+  /* border: 1px solid black;
+  border-collapse: collapse; */
+}
+table {
+    margin-left:auto; 
+    margin-right:auto;
+    border-spacing: 0px;
+}
+td {
+    padding: 10px;
+}
 h3 {
   margin: 40px 0 0;
 }

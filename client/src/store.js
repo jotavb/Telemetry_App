@@ -9,6 +9,9 @@ export default new Vuex.Store({
     records: []
   },
   mutations: {
+    setRecords: (state, newRecords) => {
+      state.records = newRecords;
+    }
   },
   actions: {
     doSendRecord() {
@@ -32,11 +35,15 @@ export default new Vuex.Store({
       .catch(err => console.warn(err));
     }
     ,
-    doFetchRecords() {
+    doFetchRecords({commit}) {
       
       Axios('http://localhost:5000/api/gcloud/', { method:'GET'})
       .then(response => response.data)
-      .then(data=> console.log(data))
+      .then(data=> 
+        {
+          console.log(data);
+          commit('setRecords', data);
+        })
       .catch(err => console.warn(err));
     }
   },
