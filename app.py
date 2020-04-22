@@ -8,17 +8,19 @@ from flask_cors import CORS, cross_origin
 from default import default_bp
 from generic import generic_bp
 from testing import testing_bp
+from gcloud import gcloud_bp
 
 ### APP - CORS ###
 app = Flask(__name__) # , 'template folder path')
 app.config['CORS_HEADERS'] = 'Content-Type'
 app.jinja_loader = jinja2.FileSystemLoader('client/dist')
-CORS(app)
+CORS(app, resources = { r"/api/*":{"origins":"*"}})
 
 ### REGISTER BLUEPRINTS ###
 app.register_blueprint(default_bp)
 app.register_blueprint(generic_bp)
 app.register_blueprint(testing_bp)
+app.register_blueprint(gcloud_bp)
 
 ### DEBUG ###
 if __name__=='__app__':

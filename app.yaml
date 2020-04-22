@@ -25,6 +25,7 @@ handlers:
 - url: /(.*\.html)
   mime_type: text/html
   static_files: client/dist/(.*\.html)
+  upload: client/dist/(.*\.html)
 
 - url: .*
-  script: main.app      
+  script: auto 
