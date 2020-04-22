@@ -1,10 +1,9 @@
 <template>
   <div class="Content">
-    <h1>{{ title }}</h1>
+    <h2>{{ title }}</h2>
     <p>
       PG17vitor - Cloud Computing - VFS
     </p>
-    <button v-on:click="doSendRecord">Click Me</button>
   </div>
 </template>
 
@@ -12,21 +11,27 @@
   import Controller from '@/lib/controller'
   import { mapActions, mapGetters } from 'vuex'
 
-  class SendRecordController extends Controller {
+  class RecordsController extends Controller {
 
     constructor( name, subComponentList = []) 
     {
         super( name, subComponentList )
         this.vm = {
+            records: []
         }
         this.props = { // props are passed in when using this component
           title: String
-        }
-        this.injectActions(mapActions(['doSendRecord']));
+        } 
+        this.injectActions(mapActions(['doFetchRecords']));
+        this.injectGetters(mapGetters(['getRecords']));
     }        
+
+    onBeforeMount() {
+        this.doFetchRecords();
+    }
   }
 
-  export default new SendRecordController('sendRecord'/* , { subComponent, anotherComponent } */);
+  export default new RecordsController('records'/* , { subComponent, anotherComponent } */);
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

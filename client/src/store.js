@@ -6,7 +6,7 @@ Vue.use( Vuex, Axios );
 
 export default new Vuex.Store({
   state: {
-    name: 'AFloat'
+    records: []
   },
   mutations: {
   },
@@ -22,7 +22,7 @@ export default new Vuex.Store({
               MapSection: '1',
               PosX: '-23.67',
               PosY: '34.87',
-              PosZ: '67.02' 
+              PosZ: '67.02'
             }
           ]
         }
@@ -32,7 +32,7 @@ export default new Vuex.Store({
       .catch(err => console.warn(err));
     }
     ,
-    doUpdateRecords() {
+    doFetchRecords() {
       
       Axios('http://localhost:5000/api/gcloud/', { method:'GET'})
       .then(response => response.data)
@@ -41,7 +41,7 @@ export default new Vuex.Store({
     }
   },
   getters: {
-    getName: state => state.player
+    getRecords: state => state.records
   },
   modules: {
   }

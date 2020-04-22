@@ -1,18 +1,18 @@
 <template>
   <div class="home">
     <h1>Welcome to PG17vitor Telemetry App</h1>
-    <h2>Number of Deaths by Section</h2>
+    <records title="Number of Deaths by Section"></records>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import SendRecord from '@/components/SendRecord.vue'
+import Records from '@/components/Records.vue'
 
 export default {
   name: 'Home',
   components: {
-    SendRecord
+    Records
   }
 }
 </script>
