@@ -1,6 +1,6 @@
 <template>
   <div class="admin">
-    <img alt="vfs-logo" src="../assets/vfs_logo.jpg">
+    <img class="logo" alt="vfs-logo" src="../assets/vfs_logo.jpg">
     <SendRecord title="Welcome to PG17vitor Admin Page"/>
   </div>
 </template>
@@ -16,3 +16,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.logo {
+  max-width: 200px;
+}
+</style>
